@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Dashboard from './dashboard';
+import './tailwind.css';
+import BgTheme from './BgTheme';
+import SelectProvider from './SelectProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BgTheme>
+    <Dashboard/>
+    </BgTheme>
   </React.StrictMode>
 );
 
