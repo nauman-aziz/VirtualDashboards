@@ -21,18 +21,18 @@ const Dashboard = () => {
       {/* main-area */}
       <div className="col-lg-8 w-full p-4 overflow-hidden">
         <Header />
+        {/* content-area*/}
         <div className="relative h-full flex items-center justify-center">
           {/* <DialogBox /> */}
-          <SelectProvider />
-          {/* Content */}
+          {/* <SelectProvider /> */}
           {/* <Modal /> */}
-          {/* <OfferCards/> */}
-          {/* <PaymentQrCode/> */}
-          {/* <PaymentForm/> */}
-          {/* <SuccessfulPayment/> */}
-          {/* <GetYourCard/> */}
-          {/* <LoginForm/> */}
-          {/* <HistoryTable /> */}
+          {/* <OfferCards /> */}
+          {/* <PaymentQrCode /> */}
+          {/* <PaymentForm /> */}
+          {/* <SuccessfulPayment /> */}
+          {/* <GetYourCard /> */}
+          {/* <LoginForm /> */}
+          <HistoryTable />
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ const DialogBox = () => {
         <div className="bg-blue-800 text-white rounded-lg max-w-lg mx-auto border-solid border-2 border-gray-100">
           <div className="flex flex-col items-center">
             {/* heading */}
-            <div className="flex items-center p-6 border-solid  border-b-2 border-gray-100">
+            <div className="flex items-center justify-start p-6 border-solid  border-b-2 border-gray-100">
               <h2 className="text-2xl font-bold mb-3">
                 🤝 Welcome to "Your Brand Name"
               </h2>
