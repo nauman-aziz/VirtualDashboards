@@ -15,14 +15,14 @@ const PaymentQrCode = () => {
   };
 
   return (
-    <div className="bg-blue-900 rounded-lg text-white text-center shadow-xl w-full max-w-md border-solid border-2 border-gray-100">
-      <h2 className="text-2xl font-bold p-6 flex items-center justify-start border-solid border-b-2 border-gray-100">
+    <div className="bg-gray-950 bg-opacity-40 rounded-lg text-white text-center shadow-xl w-full mx-6 sm:mx-0 max-w-md border-solid border-2 border-gray-100">
+      <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-100">
         {/* Replace with your payment icon */}
         <span className="mr-2">💸</span>
         Make Your Payment
       </h2>
       <div className="flex items-center justify-center w-full p-6">
-        <div className="bg-white p-6 rounded-lg w-40 h-40">
+        <div className="bg-white p-4 rounded-lg w-40 h-40">
           {/* Replace with your actual QR code image */}
           <img
             src="data:image/png;base64,..."

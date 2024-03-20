@@ -10,8 +10,8 @@ const offers = [
 
 const OfferCard = () => {
   return (
-    <div className="bg-blue-500 rounded-lg shadow-xl overflow-hidden w-80 text-white relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-75"></div>
+    <div className="bg-gray-950 bg-opacity-40 rounded-lg shadow-xl overflow-hidden w-full sm:w-80 mx-4 sm:mx-0 text-white relative">
+      <div className="absolute inset-0"></div>
       <div className="relative p-6">
         <div className="flex justify-between items-start">
           <div className="text-lg font-bold uppercase tracking-wide">
@@ -51,7 +51,7 @@ const OfferCards = () => {
           </button>
           <div className="text-white text-xl mb-5">Select Your Offer</div>
         </div>
-        <div className="flex-1 flex flex-wrap items-start justify-between gap-4 h-100 overflow-y-auto w-full">
+        <div className="flex-1 flex flex-wrap items-start justify-center sm:justify-start gap-2 sm:gap-4 h-100 overflow-y-auto w-full">
           {offers.map((offer, index) => (
             <OfferCard
               key={index}

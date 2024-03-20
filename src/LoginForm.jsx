@@ -76,12 +76,12 @@ const LoginForm = () => {
 
   return (
     // <div className="bg-blue-800 h-screen flex items-center justify-center p-4">
-    <div className="bg-blue-900 rounded-lg w-full max-w-md text-white border-solid border-2 border-gray-100">
-      <h2 className="text-2xl font-bold p-6 flex items-center justify-start border-solid border-b-2 border-gray-100 mb-4">
+    <div className="bg-gray-950 bg-opacity-40 rounded-lg w-full mx-8 sm:mx-0 text-white border-solid border-2 border-gray-100">
+      <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-100 mb-4">
         <span className="mr-2">🚀</span>
         Start Your Journey
       </h2>
-      <form onSubmit={handleSubmit} noValidate className="p-6">
+      <form onSubmit={handleSubmit} noValidate className="p-4 flex flex-col">
         <div className="mb-4">
           <input
             type="email"
@@ -119,7 +119,7 @@ const LoginForm = () => {
         )}
         <button
           type="submit"
-          className="w-full bg-indigo-600 hover:bg-blue-700 rounded py-2 px-4 font-bold transition-colors"
+          className="self-center text-center bg-indigo-600 hover:bg-blue-700 rounded py-2 px-4 font-bold transition-colors"
           disabled={loading}
         >
           {loading ? "Logging in..." : "Log In"}

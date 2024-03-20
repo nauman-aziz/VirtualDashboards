@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "./header";
-import { useWindowSize } from "react-use";
 import NavigationBar from "./NavigationBar";
 import DialogBox from "./DialogBox";
 import SelectProvider from "./SelectProvider";
@@ -13,31 +12,38 @@ import LoginForm from "./LoginForm";
 import HistoryTable from "./HistoryTable";
 
 const Dashboard = () => {
-  const { width } = useWindowSize();
-  const [mobileView, setMobileView] = useState(true);
   const [navbarVisible, setNavbarVisible] = useState(false);
+
+  const toggleNavbarVisibility = () => {
+    console.log("visibility", navbarVisible);
+    if (!navbarVisible) {
+      setNavbarVisible(true);
+    }
+  };
 
   return (
     <div className="flex h-lvh">
       {/* nav-area */}
       <div className="">
-        <NavigationBar mobileView={mobileView} navbarVisible={navbarVisible} />
+        <NavigationBar
+          navbarVisible={navbarVisible}
+          toggleNavbarVisibility={toggleNavbarVisibility}
+        />
       </div>
       {/* main-area */}
-      <div className="w-full p-4 overflow-hidden">
-        <Header mobileView={mobileView} />
+      <div className="w-full overflow-x-hidden overflow-y-auto sm:overflow-y-hidden">
+        <Header toggleNavbarVisibility={toggleNavbarVisibility} />
         {/* content-area*/}
-        <div className="relative h-full flex items-center justify-center">
+        <div className="relative h-full flex items-center justify-center p-2">
           {/* <DialogBox /> */}
           {/* <SelectProvider /> */}
-          {/* <Modal /> */}
           {/* <OfferCards /> */}
           {/* <PaymentQrCode /> */}
           {/* <PaymentForm /> */}
           {/* <SuccessfulPayment /> */}
           {/* <GetYourCard /> */}
-          {/* <LoginForm /> */}
-          <HistoryTable />
+          <LoginForm />
+          {/* <HistoryTable /> */}
         </div>
       </div>
     </div>

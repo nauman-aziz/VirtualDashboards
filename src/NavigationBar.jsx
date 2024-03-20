@@ -3,26 +3,22 @@ import { LogoutIcon } from "@heroicons/react/solid"; // Ensure you have installe
 import HomeIcon from "../src/assests/home.svg";
 import HistoryIcon from "../src/assests/history.svg";
 
-const NavigationBar = ({ mobileView, navbarVisible }) => {
+const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
   return (
     <nav
-      className={`bg-blue-900 text-white w-64 md:w-46 flex flex-col items-center p-5 space-y-6 h-screen justify-between ${
-        (mobileView && "absolute z-10", navbarVisible ? "" : "hidden")
-      }`}
+      className={`bg-blue-900 text-white w-64 md:w-46 flex flex-col items-center p-5 space-y-6 h-screen justify-between absolute z-10 sm:z-0 sm:relative inset-y-0 left-0`}
+      style={!navbarVisible ? { left: "-255px" } : { left: 0 }}
     >
       <div
-        className={`flex flex-col ${
-          mobileView
-            ? "items-start justify-start"
-            : "items-center justify-center"
-        }`}
+        className={`flex flex-col items-start justify-start sm:items-center sm:justify-center`}
       >
         <div className="bg-white rounded-full p-7">
           {/* This would be where you place your company logo as an image or SVG */}
         </div>
-        <div className="text-white text-2xl">
-          {mobileView ? "X" : "Company Name"}
-        </div>
+        <div className="hidden sm:block text-white text-xl">Company Name</div>
+        <button onClick={toggleNavbarVisibility}>
+          <div className="block sm:hidden text-white text-2xl">X</div>
+        </button>
       </div>
 
       <div className="text-white flex flex-col items-center space-y-4 w-full">

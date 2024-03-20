@@ -1,19 +1,20 @@
 import React from "react";
+import Img from "../src/assests/operator.png";
 // Import icons or images for each provider if needed.
 
 const providers = [
-  { name: "TREMENDOUS", icon: "path-to-tremendous-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
-  { name: "Wallester", icon: "path-to-wallester-icon" },
+  { name: "TREMENDOUS", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
+  { name: "Wallester", icon: Img },
   // Add the rest of your providers here
 ];
 
@@ -30,13 +31,17 @@ const SelectProvider = () => {
           </button>
           <div className="text-white text-xl mb-5">Select Your Provider</div>
         </div>
-        <div className="flex-1 grid grid-cols-3 gap-4 h-100 overflow-y-auto w-full">
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4 h-100 overflow-y-auto w-full">
           {providers.map((provider, index) => (
             <div
               key={index}
-              className="bg-gray-200 bg-opacity-30 border-2 border-solid border-sky-50 rounded-lg p-4 flex flex-col items-center justify-center h-40"
+              className="bg-gray-200 bg-opacity-30 border-2 border-solid border-sky-50 rounded-lg p-4 flex flex-col items-center justify-center gap-4 h-40 max-h-56"
             >
-              <img src={provider.logo} alt={provider.name} className="h-10" />{" "}
+              <img
+                src={provider.icon}
+                alt={provider.name}
+                className="h-10 max-w-64"
+              />{" "}
               {/* Use the actual height for your logos */}
               <span className="ml-2">{provider.name}</span>
             </div>
