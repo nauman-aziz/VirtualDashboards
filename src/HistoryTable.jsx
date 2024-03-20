@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const HistoryTable = () => {
   const [historyData, setHistoryData] = useState([]);
@@ -6,7 +6,9 @@ const HistoryTable = () => {
   useEffect(() => {
     const fetchHistoryData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/todos"
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -21,27 +23,34 @@ const HistoryTable = () => {
   }, []);
 
   return (
-    <div className="bg-blue-800 h-screen items-center justify-center p-4 text-white overflow-y-auto scrollbar-hide scrollbar-thin">
-      <h2 className="text-2xl font-bold mb-4">History</h2>
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse border border-white">
-          <thead>
-            <tr className="text-left">
-              <th className="py-2 px-4 border border-white">Provider Name</th>
-              <th className="py-2 px-4 border border-white">OFFER</th>
-              <th className="py-2 px-4 border border-white">PURCHASED ON</th>
-            </tr>
-          </thead>
-          <tbody>
-            {historyData.map((item, index) => (
-              <tr key={index} className="border border-white">
-                <td className="py-2 px-4 border border-white">{item.id}</td>
-                <td className="py-2 px-4 border border-white">{item.userId}</td>
-                <td className="py-2 px-4 border border-white">{item.title}</td>
+    <div className="w-full h-full">
+      <div
+        className="flex flex-col items-start justify-start p-4 text-white overflow-hidden scrollbar-hide scrollbar-thin rounded-lg bg-gray-950 bg-opacity-40 mt-4"
+        style={{ height: "92%" }}
+      >
+        <h2 className="text-xl font-bold mb-4">History</h2>
+        <div className="overflow-y-auto w-full">
+          <table className="w-full h-full rounded-lg border-collapse border border-white">
+            <thead>
+              <tr className="text-left bg-slate-800">
+                <th className="py-2 px-4">Provider Name</th>
+                <th className="py-2 px-4">OFFER</th>
+                <th className="py-2 px-4">PURCHASED ON</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="overflow-y-auto">
+              {historyData.map((item, index) => (
+                <tr key={index} className="border border-white">
+                  <td className="py-2 px-4 text-blue-700 font-bold">
+                    {item.id}
+                  </td>
+                  <td className="py-2 px-4">{item.userId}</td>
+                  <td className="py-2 px-4">{item.title}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
