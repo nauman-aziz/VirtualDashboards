@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import ScrollableDialogBox from "./selectCountryDialogBox";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+
 
 const DialogBox = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+  
+  const goToCreateYourCard = () => {
+    navigate("/select-country");
   };
 
   return (
     <div className="absolute bg-opacity-50 flex justify-center items-center mx-8 sm:mx-0">
-      {!isModalOpen && (
         <div className="bg-gray-950 bg-opacity-40 text-white rounded-lg max-w-lg mx-auto border-solid border-2 border-gray-100">
           <div className="flex flex-col items-center">
             {/* heading */}
@@ -30,15 +26,13 @@ const DialogBox = () => {
               </p>
               <button
                 className="bg-indigo-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors"
-                onClick={openModal}
+                onClick={goToCreateYourCard}
               >
                 Create your Card
               </button>
             </div>
           </div>
         </div>
-      )}
-      {isModalOpen && <ScrollableDialogBox onClose={closeModal} />}
     </div>
   );
 };

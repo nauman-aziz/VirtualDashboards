@@ -1,7 +1,30 @@
-import React from "react";
-import { CheckCircleIcon } from "@heroicons/react/solid"; // make sure to install @heroicons/react package
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+
 
 const ScrollableDialogBox = () => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const [countries, setCountries] = useState([]);
+  
+  useEffect(() => {
+    const fetchCountries = async () => {
+      // Fetch country data
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const data = await response.json();
+      // Transform data to include only relevant information
+      const transformedData = data.map(country => ({
+        name: country.name.common,
+        code: country.cca2.toLowerCase(),
+      })).sort((a, b) => a.name.localeCompare(b.name)); // Sort countries alphabetically;
+      setCountries(transformedData);
+    };
+
+    fetchCountries();
+  }, []);
+
+  const goToProviders = () => {
+    navigate("/select-provider");
+  };
   return (
     <div className="absolute flex justify-center items-center p-4">
       <div
@@ -13,49 +36,26 @@ const ScrollableDialogBox = () => {
         </div>
         <div className="max-h-64 overflow-y-auto border-solid  border-b-2 border-gray-100">
           {/* Scrollable content goes here */}
-          <ul className="divide-y-2 divide-gray-100">
-            {/* Repeat this `li` for each country */}
-            <li className="flex justify-between items-center p-4">
+          <ul>
+          {countries.map(({ name, code }) => (
+            <li key={code} className="flex justify-between items-center p-4">
               <div className="flex items-center">
-                {/* Replace with your country flag image */}
                 <img
-                  src="path/to/your/flag.png"
-                  alt="Country Flag"
+                  src={`https://flagcdn.com/w20/${code}.png`}
+                  alt={`${name} Flag`}
                   className="h-6 w-10 mr-2"
                 />
-                <span>America</span>
+                <span>{name}</span>
               </div>
               <input type="checkbox" className="h-5 w-5" />
             </li>
-            <li className="flex justify-between items-center p-4">
-              <div className="flex items-center">
-                {/* Replace with your country flag image */}
-                <img
-                  src="path/to/your/flag.png"
-                  alt="Country Flag"
-                  className="h-6 w-10 mr-2"
-                />
-                <span>America</span>
-              </div>
-              <input type="checkbox" className="h-5 w-5" />
-            </li>
-            <li className="flex justify-between items-center p-4">
-              <div className="flex items-center">
-                {/* Replace with your country flag image */}
-                <img
-                  src="path/to/your/flag.png"
-                  alt="Country Flag"
-                  className="h-6 w-10 mr-2"
-                />
-                <span>America</span>
-              </div>
-              <input type="checkbox" className="h-5 w-5" />
-            </li>
-            {/* ... other countries */}
-          </ul>
+          ))}
+        </ul>
         </div>
         <div className="flex justify-center p-4">
-          <button className="bg-indigo-600 hover:bg-blue-700 px-4 py-2 rounded transition-colors">
+          <button 
+          onClick={goToProviders}
+          className="bg-indigo-600 hover:bg-blue-700 px-4 py-2 rounded transition-colors">
             Confirm
           </button>
         </div>

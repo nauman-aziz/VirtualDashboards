@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,7 @@ const LoginForm = () => {
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,6 +69,7 @@ const LoginForm = () => {
       console.log("Login successful:", data);
 
       // Perform further actions here such as redirecting the user or storing logged-in state
+      navigate('/home')
     } catch (error) {
       console.error("Login failed:", error);
       setErrors({ form: "Login failed. Please try again later." });

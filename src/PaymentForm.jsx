@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import VisaIcon from "../src/assests/visa.svg";
 import MasterIcon from "../src/assests/master-card.svg";
 import AmericanExpressIcon from "../src/assests/amex.svg";
+import { useNavigate } from "react-router-dom";
 
 const PaymentForm = () => {
+  const navigate = useNavigate(); // Initialize the navigate function
+
   const [formData, setFormData] = useState({
     cardDetails: "",
     mmYYCVC: "",
@@ -27,25 +30,32 @@ const PaymentForm = () => {
 
     try {
       // Simulate an API call
-      const response = await fetch("https://dummyapi.io/data/api/post", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // 'app-id': 'YOUR_DUMMY_API_APP_ID' // Include this if your API requires an App ID
-        },
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch("https://dummyapi.io/data/api/post", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     // 'app-id': 'YOUR_DUMMY_API_APP_ID' // Include this if your API requires an App ID
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
 
-      const data = await response.json();
-      console.log(data);
+      // const data = await response.json();
+      // console.log(data);
 
       // Here you would handle the successful payment scenario
+      navigate("/successful-payment");
     } catch (error) {
       console.error("Error during API call", error);
       // Handle errors here
     } finally {
       setLoading(false);
     }
+  };
+
+
+  // Function to handle click on the card
+  const gotoPaymentQrCode = () => {
+    navigate("/payment-qr-code");
   };
 
   return (
@@ -146,7 +156,7 @@ const PaymentForm = () => {
             </div>
 
             <div className="flex justify-center mb-3">
-              <button className="text-blue-200 underline">Scan QR Code</button>
+              <button onClick={gotoPaymentQrCode} className="text-blue-200 underline">Scan QR Code</button>
             </div>
 
             <div className="flex justify-center mb-2">

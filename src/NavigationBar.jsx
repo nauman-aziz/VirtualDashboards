@@ -1,9 +1,21 @@
 import React from "react";
-import { LogoutIcon } from "@heroicons/react/solid"; // Ensure you have installed heroicons package
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { LogoutIcon } from "@heroicons/react/solid";
 import HomeIcon from "../src/assests/home.svg";
 import HistoryIcon from "../src/assests/history.svg";
 
 const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
+  // Define functions to handle navigation
+  const goToHome = () => {
+    navigate("/");
+  };
+
+  const goToHistory = () => {
+    navigate("/history-table");
+  };
+
   return (
     <nav
       className={`bg-blue-900 text-white w-64 md:w-46 flex flex-col items-center p-5 space-y-6 h-screen justify-between absolute z-10 sm:z-0 sm:relative inset-y-0 left-0`}
@@ -22,7 +34,11 @@ const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
       </div>
 
       <div className="text-white flex flex-col items-center space-y-4 w-full">
-        <button className="hover:bg-slate-900 bg-opacity-60 text-white rounded p-2 flex items-center justify-center w-full md:w-45 gap-8">
+        {/* Use onClick event to trigger navigation functions */}
+        <button
+          className="hover:bg-slate-900 bg-opacity-60 text-white rounded p-2 flex items-center justify-center w-full md:w-45 gap-8"
+          onClick={goToHome}
+        >
           <img
             src={HomeIcon}
             alt="home icon"
@@ -30,7 +46,10 @@ const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
           />
           <span>Home</span>
         </button>
-        <button className="hover:bg-slate-900 bg-opacity-60 text-white rounded p-2 flex items-center justify-center w-full md:w-45 gap-7">
+        <button
+          className="hover:bg-slate-900 bg-opacity-60 text-white rounded p-2 flex items-center justify-center w-full md:w-45 gap-7"
+          onClick={goToHistory}
+        >
           <img
             src={HistoryIcon}
             alt="history icon"
