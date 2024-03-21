@@ -36,14 +36,6 @@ const Dashboard = () => {
         {/* content-area*/}
         <div className="relative h-full flex items-center justify-center p-2">
           <DialogBox />
-          {/* <SelectProvider /> */}
-          {/* <OfferCards /> */}
-          {/* <PaymentQrCode /> */}
-          {/* <PaymentForm /> */}
-          {/* <SuccessfulPayment /> */}
-          {/* <GetYourCard /> */}
-          {/* <LoginForm /> */}
-          {/* <HistoryTable /> */}
         </div>
       </div>
     </div>

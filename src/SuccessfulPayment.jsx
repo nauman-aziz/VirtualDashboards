@@ -15,7 +15,7 @@ const SuccessfulPayment = () => {
         numberOfPieces={4000}
         recycle={false}
       />
-      <div className="bg-gray-950 bg-opacity-40 rounded-lg text-white text-center shadow-xl w-full max-w-sm mx-2 sm:mx-0 border-solid border border-gray-600">
+      <div className="bg-gray-950 bg-opacity-40 rounded-lg text-white text-center shadow-xl w-full sm:max-w-md mx-2 sm:mx-0 border-solid border border-gray-600">
         <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-600">
           {/* Replace with your payment icon */}
           <span className="mr-2">💸</span>
@@ -30,6 +30,9 @@ const SuccessfulPayment = () => {
         <div className="flex items-center justify-center mb-4">
           <img src={RoundedCheckIcon} alt="Check Mark" className="w-12" />
         </div>
+        <button>
+          <p className="text-lg underline mb-6">Redeem Your Card</p>
+        </button>
       </div>
     </div>
   );
