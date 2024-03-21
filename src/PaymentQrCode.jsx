@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import QRIcon from "../src/assests/qr.svg";
 import { useNavigate } from "react-router-dom";
 
-
-
 const PaymentQrCode = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -16,14 +14,13 @@ const PaymentQrCode = () => {
     setTimeout(() => {
       setLoading(false);
       // After loading you might want to redirect or update the state
-      navigate("/payment-form")
-
+      navigate("/payment-form");
     }, 3000); // 3 seconds loading for demonstration
   };
 
   return (
-    <div className="bg-gray-950 bg-opacity-40 rounded-lg text-white text-center shadow-xl w-full mx-6 sm:mx-0 max-w-md border-solid border-2 border-gray-100">
-      <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-100">
+    <div className="bg-gray-950 bg-opacity-40 rounded-lg text-white text-center shadow-xl w-full mx-6 sm:mx-0 max-w-md border-solid border border-gray-600">
+      <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-600">
         {/* Replace with your payment icon */}
         <span className="mr-2">💸</span>
         Make Your Payment
@@ -31,11 +28,7 @@ const PaymentQrCode = () => {
       <div className="flex items-center justify-center w-full p-6">
         <div className="bg-white p-4 rounded-lg w-40 h-40">
           {/* Replace with your actual QR code image */}
-          <img
-            src={QRIcon}
-            alt="QR Code"
-            className="mx-auto"
-          />
+          <img src={QRIcon} alt="QR Code" className="mx-auto" />
         </div>
       </div>
 

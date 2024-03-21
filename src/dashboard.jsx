@@ -12,7 +12,7 @@ import LoginForm from "./LoginForm";
 import HistoryTable from "./HistoryTable";
 
 const Dashboard = () => {
-  const [navbarVisible, setNavbarVisible] = useState(true);
+  const [navbarVisible, setNavbarVisible] = useState(false);
 
   const toggleNavbarVisibility = () => {
     console.log("visibility", navbarVisible);
@@ -36,14 +36,6 @@ const Dashboard = () => {
         {/* content-area*/}
         <div className="relative h-full flex items-center justify-center p-2">
           <DialogBox />
-          {/* <SelectProvider /> */}
-          {/* <OfferCards /> */}
-          {/* <PaymentQrCode /> */}
-          {/* <PaymentForm /> */}
-          {/* <SuccessfulPayment /> */}
-          {/* <GetYourCard /> */}
-          {/* <LoginForm /> */}
-          {/* <HistoryTable /> */}
         </div>
       </div>
     </div>
