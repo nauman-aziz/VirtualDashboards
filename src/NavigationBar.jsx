@@ -30,13 +30,13 @@ const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
       className={`bg-blue-900 text-white w-64 md:w-46 flex flex-col items-center p-5 space-y-6 h-screen justify-between absolute z-10 sm:z-0 sm:relative inset-y-0 left-0`}
       style={!navbarVisible ? { left: "-255px" } : { left: 0 }}
     >
-      <div className="flex flex-col items-start justify-start sm:items-center sm:justify-center">
+      <div className="flex flex-col items-center justify-center">
         <div className="bg-white rounded-full p-7">
           {/* Place for company logo */}
         </div>
         <div className="hidden sm:block text-white text-xl">Company Name</div>
         <button onClick={toggleNavbarVisibility}>
-          <div className="block sm:hidden text-white text-2xl">X</div>
+          <div className="block sm:hidden text-white text-2xl ">X</div>
         </button>
       </div>
 
