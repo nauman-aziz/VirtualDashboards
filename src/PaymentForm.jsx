@@ -80,66 +80,70 @@ const PaymentForm = () => {
               <img src={AmericanExpressIcon} alt="American Express Card" />
             </div>
           </label>
-          <input
-            id="card-details"
-            name="cardDetails"
-            type="text"
-            placeholder="Card Details"
-            onChange={handleChange}
-            required
-            className="w-full p-3 rounded bg-gray-950 bg-opacity-40 mb-2"
-          />
-          <input
-            name="mmYYCVC"
-            type="text"
-            placeholder="MM/YY/CVC"
-            onChange={handleChange}
-            required
-            className="w-full p-3 rounded bg-gray-950 bg-opacity-40"
-          />
+          <div className="border border-solid border-gray-500 rounded">
+            <input
+              id="card-details"
+              name="cardDetails"
+              type="text"
+              placeholder="Card Details"
+              onChange={handleChange}
+              required
+              className="w-full p-3 bg-gray-950 bg-opacity-40 border-b border-solid border-gray-500"
+            />
+            <input
+              name="mmYYCVC"
+              type="text"
+              placeholder="MM/YY/CVC"
+              onChange={handleChange}
+              required
+              className="w-full p-3 bg-gray-950 bg-opacity-40"
+            />
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 py-4 px-6">
-          <input
-            name="countryOrRegion"
-            type="text"
-            placeholder="Country or Region"
-            onChange={handleChange}
-            required
-            className="col-span-2 p-3 rounded bg-gray-950 bg-opacity-40"
-          />
-          <input
-            name="address"
-            type="text"
-            placeholder="Address"
-            onChange={handleChange}
-            required
-            className="col-span-2 p-3 rounded bg-gray-950 bg-opacity-40"
-          />
-          <input
-            name="city"
-            type="text"
-            placeholder="City"
-            onChange={handleChange}
-            required
-            className="col-span-2 p-3 rounded bg-gray-950 bg-opacity-40"
-          />
-          <input
-            name="stateProvince"
-            type="text"
-            placeholder="State / Province"
-            onChange={handleChange}
-            required
-            className="p-3 rounded bg-gray-950 bg-opacity-40"
-          />
-          <input
-            name="zipCode"
-            type="text"
-            placeholder="Zip Code"
-            onChange={handleChange}
-            required
-            className="p-3 rounded bg-gray-950 bg-opacity-40"
-          />
+        <div className="py-4 px-6">
+          <div className="grid grid-cols-2 border border-solid border-gray-500 rounded">
+            <input
+              name="countryOrRegion"
+              type="text"
+              placeholder="Country or Region"
+              onChange={handleChange}
+              required
+              className="col-span-2 p-3 bg-gray-950 bg-opacity-40 border-b border-solid border-gray-500"
+            />
+            <input
+              name="address"
+              type="text"
+              placeholder="Address"
+              onChange={handleChange}
+              required
+              className="col-span-2 p-3 bg-gray-950 bg-opacity-40 border-b border-solid border-gray-500"
+            />
+            <input
+              name="city"
+              type="text"
+              placeholder="City"
+              onChange={handleChange}
+              required
+              className="col-span-2 p-3 bg-gray-950 bg-opacity-40 border-b border-solid border-gray-500"
+            />
+            <input
+              name="stateProvince"
+              type="text"
+              placeholder="State / Province"
+              onChange={handleChange}
+              required
+              className="p-3 bg-gray-950 bg-opacity-40 border-b border-r border-solid border-gray-500"
+            />
+            <input
+              name="zipCode"
+              type="text"
+              placeholder="Zip Code"
+              onChange={handleChange}
+              required
+              className="p-3 bg-gray-950 bg-opacity-40 border-b border-solid border-gray-500"
+            />
+          </div>
         </div>
 
         {loading ? (
