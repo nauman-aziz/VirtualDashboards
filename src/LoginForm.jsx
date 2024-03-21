@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -69,7 +68,7 @@ const LoginForm = () => {
       console.log("Login successful:", data);
 
       // Perform further actions here such as redirecting the user or storing logged-in state
-      navigate('/home')
+      navigate("/home");
     } catch (error) {
       console.error("Login failed:", error);
       setErrors({ form: "Login failed. Please try again later." });
@@ -80,7 +79,7 @@ const LoginForm = () => {
 
   return (
     // <div className="bg-blue-800 h-screen flex items-center justify-center p-4">
-    <div className="bg-gray-950 bg-opacity-40 rounded-lg w-full mx-8 sm:mx-0 text-white border-solid border-2 border-gray-100">
+    <div className="bg-gray-950 bg-opacity-40 rounded-lg w-full mx-8 sm:mx-0 sm:max-w-md text-white border-solid border-2 border-gray-100">
       <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-100 mb-4">
         <span className="mr-2">🚀</span>
         Start Your Journey

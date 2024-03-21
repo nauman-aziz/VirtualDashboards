@@ -12,7 +12,7 @@ import LoginForm from "./LoginForm";
 import HistoryTable from "./HistoryTable";
 
 const Dashboard = () => {
-  const [navbarVisible, setNavbarVisible] = useState(true);
+  const [navbarVisible, setNavbarVisible] = useState(false);
 
   const toggleNavbarVisibility = () => {
     console.log("visibility", navbarVisible);

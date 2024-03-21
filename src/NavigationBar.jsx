@@ -29,7 +29,7 @@ const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
         </div>
         <div className="hidden sm:block text-white text-xl">Company Name</div>
         <button onClick={toggleNavbarVisibility}>
-          <div className="block sm:hidden text-white text-2xl">X</div>
+          <div className="block sm:hidden text-white text-2xl">x</div>
         </button>
       </div>
 
