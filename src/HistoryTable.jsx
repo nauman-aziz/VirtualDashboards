@@ -30,22 +30,22 @@ const HistoryTable = () => {
       >
         <h2 className="text-xl font-bold mb-4">History</h2>
         <div className="overflow-y-auto w-full">
-          <table className="w-full h-full rounded-lg border-collapse border border-white">
+          <table className="w-full h-full rounded-lg border-collapse border border-gray-600">
             <thead>
-              <tr className="text-left bg-slate-800">
-                <th className="py-2 px-4">Provider Name</th>
-                <th className="py-2 px-4">OFFER</th>
-                <th className="py-2 px-4">PURCHASED ON</th>
+              <tr className="bg-slate-800 text-sm font-thin">
+                <th className="text-start py-2 px-4 w-1/3">Provider Name</th>
+                <th className="text-center py-2 px-4 w-1/3">OFFER</th>
+                <th className="text-end py-2 px-4 w-1/3">PURCHASED ON</th>
               </tr>
             </thead>
             <tbody className="overflow-y-auto">
               {historyData.map((item, index) => (
-                <tr key={index} className="border border-white">
-                  <td className="py-2 px-4 text-blue-700 font-bold">
-                    {item.id}
+                <tr key={index} className="border border-gray-600">
+                  <td className="py-2 px-4 text-blue-700 font-bold text-start">
+                    TREMENDOUS
                   </td>
-                  <td className="py-2 px-4">{item.userId}</td>
-                  <td className="py-2 px-4">{item.title}</td>
+                  <td className="py-2 px-4 text-center">{item.userId}</td>
+                  <td className="py-2 px-4 text-end">{item.title}</td>
                 </tr>
               ))}
             </tbody>
