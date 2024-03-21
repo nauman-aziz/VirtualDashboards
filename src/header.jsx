@@ -6,13 +6,17 @@ const Header = ({ toggleNavbarVisibility }) => {
   const navigate = useNavigate(); // Initialize the navigate function
 
   const handleLoginClick = () => {
-    navigate('/login-form'); // Navigate to the LoginForm component
+    navigate("/login-form"); // Navigate to the LoginForm component
   };
 
   return (
-    <header className="text-white flex justify-between items-center border-solid border-b-2 border-sky-50 p-2">
+    <header className="text-white flex justify-between items-center border-solid border-b border-gray-600 p-2">
       <button onClick={toggleNavbarVisibility}>
-        <img src={HamburgerMenu} className="block sm:hidden" alt="Hamburger Menu Icon"></img>
+        <img
+          src={HamburgerMenu}
+          className="block sm:hidden"
+          alt="Hamburger Menu Icon"
+        ></img>
       </button>
       <h1 className="text-xl font-bold">Dashboard</h1>
       <button

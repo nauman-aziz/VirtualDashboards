@@ -79,8 +79,8 @@ const LoginForm = () => {
 
   return (
     // <div className="bg-blue-800 h-screen flex items-center justify-center p-4">
-    <div className="bg-gray-950 bg-opacity-40 rounded-lg w-full mx-8 sm:mx-0 sm:max-w-md text-white border-solid border-2 border-gray-100">
-      <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-100 mb-4">
+    <div className="bg-gray-950 bg-opacity-40 rounded-lg w-full mx-8 sm:mx-0 sm:max-w-md text-white border-solid border border-gray-600">
+      <h2 className="text-2xl font-bold p-4 flex items-center justify-start border-solid border-b-2 border-gray-600 mb-4">
         <span className="mr-2">🚀</span>
         Start Your Journey
       </h2>

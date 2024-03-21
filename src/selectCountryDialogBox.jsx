@@ -28,11 +28,11 @@ const ScrollableDialogBox = () => {
   };
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="bg-gray-950 bg-opacity-40 text-white sm:max-w-md rounded-lg overflow-hidden border-solid border-2 border-gray-100">
-        <div className="p-4 border-solid border-b-2 border-gray-100">
+      <div className="bg-gray-950 bg-opacity-40 text-white sm:max-w-md rounded-lg overflow-hidden border-solid border border-gray-600">
+        <div className="p-4 border-solid border-b-2 border-gray-600">
           <h2 className="text-lg font-semibold">🌍 Select Your Country</h2>
         </div>
-        <div className="max-h-64 overflow-y-auto border-solid  border-b-2 border-gray-100">
+        <div className="max-h-64 overflow-y-auto border-solid  border-b-2 border-gray-600">
           {/* Scrollable content goes here */}
           <ul>
             {countries.map(({ name, code }) => (
