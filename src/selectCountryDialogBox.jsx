@@ -32,7 +32,9 @@ const ScrollableDialogBox = () => {
 
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="bg-gray-950 bg-opacity-40 text-white sm:max-w-md rounded-lg overflow-hidden border-solid border border-gray-600">
+      <div className="bg-gray-950 bg-opacity-40 text-white w-full sm:w-96 md:w-1/2 lg:w-1/3 xl:w-1/4 rounded-lg overflow-hidden border-solid border border-gray-600">
+
+
         <div className="p-4 border-solid border-b-2 border-gray-600">
           <h2 className="text-lg font-semibold">🌍 Select Your Country</h2>
           <input
@@ -43,7 +45,7 @@ const ScrollableDialogBox = () => {
             className="mt-2 p-2 w-full bg-opacity-50 tansition-colors bg-gray-800 rounded hover:bg-slate-900"
           />
         </div>
-        <div className="max-h-64 overflow-y-auto border-solid border-b-2 border-gray-600">
+        <div className="h-64 sm:96 overflow-y-auto border-solid border-b-2 border-gray-600">
           <ul>
             {filteredCountries.map(({ name, code }) => (
               <li key={code} className="flex justify-between items-center p-4 hover:bg-slate-900  hover:transition-all">
