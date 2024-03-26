@@ -8,7 +8,7 @@ const SuccessfulPayment = () => {
   const { width, height } = useWindowSize();
 
   return (
-    <div className="flex flex-col items-center justify-center w-full sm:w-auto">
+    <div className=" flex flex-col items-center justify-center bg-gray-950 bg-opacity-40 rounded-lg text-white text-center shadow-xl w-full mx-6 sm:mx-0 max-w-md border-solid border border-gray-600">
       <Confetti
         width={width}
         height={height}

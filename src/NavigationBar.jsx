@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
-import { LogoutIcon } from "@heroicons/react/solid";
 import HomeIcon from "../src/assests/home.svg";
 import HistoryIcon from "../src/assests/history.svg";
+import Twitter from "../src/assests/twitter.svg";
+import Telegram from "../src/assests/telegram.svg";
+import Docs from "../src/assests/docs.svg";
 
 const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
   const navigate = useNavigate();
@@ -15,20 +17,24 @@ const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
 
   const goToHistory = () => {
     setActiveButton("history");
-    navigate("/history-table");
+    navigate("/coming-soon");
   };
 
   // Dynamic class for buttons to maintain hover state
   const getButtonClass = (buttonName) => {
-    return `hover:bg-slate-900 bg-opacity-60 text-white rounded p-2 flex items-center justify-center w-full md:w-45 gap-8 ${
-      activeButton === buttonName ? "bg-slate-900" : ""
-    }`;
+    return `hover:bg-slate-900 bg-opacity-60 text-white rounded p-2 flex items-center justify-center w-full md:w-45 gap-8 transition-colors ${activeButton === buttonName ? "bg-slate-900 transition-colors" : ""
+      }`;
   };
+    // Updated style prop for the <nav> element
+    const navbarStyle = {
+      transition: 'left 0.5s ease', // Add this line
+      left: navbarVisible ? '0' : '-255px', // Updated this line
+    };
 
   return (
     <nav
       className={`bg-blue-900 text-white w-64 md:w-46 flex flex-col items-center p-5 space-y-6 h-screen justify-between absolute z-10 sm:z-0 sm:relative inset-y-0 left-0`}
-      style={!navbarVisible ? { left: "-255px" } : { left: 0 }}
+      style={navbarStyle}
     >
       <div className="flex flex-col items-center justify-center">
         <div className="bg-white rounded-full p-7">
@@ -50,9 +56,12 @@ const NavigationBar = ({ navbarVisible, toggleNavbarVisibility }) => {
           <span>History</span>
         </button>
       </div>
-      <button className="mt-auto text-gray-300 hover:text-white flex items-center justify-center w-full">
-        <LogoutIcon className="h-6 w-6" />
-        <span className="hidden md:block">Log Out</span>
+      <button className="mt-auto text-gray-300 hover:text-white flex items-center justify-center w-full gap-3">
+
+        <img src={Twitter} alt="Twitter" className="h-7 w-7 hover:bg-slate-900 transition-colors" />
+        <img src={Telegram} alt="Twitter" className="h-7 w-7 hover:bg-slate-900 transition-colors" />
+        <img src={Docs} alt="Twitter" className="h-7 w-7 hover:bg-slate-900 transition-colors" />
+
       </button>
     </nav>
   );

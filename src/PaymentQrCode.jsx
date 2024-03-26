@@ -25,16 +25,17 @@ const PaymentQrCode = () => {
         <span className="mr-2">💸</span>
         Make Your Payment
       </h2>
-      <div className="flex items-center justify-center w-full p-6">
-        <div className="bg-white p-4 rounded-lg w-40 h-40">
+      <div className="flex items-center justify-center w-full p-10">
+        <div className="bg-white p-2 rounded-lg w-40 h-40 gap-3 ">
           {/* Replace with your actual QR code image */}
           <img src={QRIcon} alt="QR Code" className="mx-auto" />
+          <p className="text-center text-whitw-400 my-5">LAbJthvYfg</p>
         </div>
       </div>
 
       {loading ? (
         <div className="flex justify-center items-center">
-          <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+          <div className="loader ease-linear rounded-half border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
         </div>
       ) : (
         <>
