@@ -2,6 +2,7 @@ import React from "react";
 import Img from "../src/assests/provider.svg";
 // Import icons or images for each provider if needed.
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import "../src/styles/cs.css"; 
 
 const providers = [
   { name: "TREMENDOUS", icon: Img },
@@ -36,7 +37,7 @@ const SelectProvider = () => {
         <div className="flex items-baseline justify-start gap-4">
           <button
             onClick={goToSelectCountry}
-            className="hover:bg-black hover:bg-opacity-50 rounded-full text-white font-bold px-2 py-1 transition-colors"
+            className="hover:bg-black dot hover:bg-opacity-50 rounded-full text-white font-bold px-2 py-1 transition-colors"
           >
             ←
           </button>
@@ -46,7 +47,7 @@ const SelectProvider = () => {
           {providers.map((provider, index) => (
             <div
               key={index}
-              className="bg-gray-200 bg-opacity-30 border border-solid border-sky-50 rounded-lg p-4 flex flex-col items-center justify-center gap-4 h-40 max-h-56"
+              className="bg-gray-200 bg-opacity-30 border border-solid border-sky-50 rounded-lg p-4 flex flex-col items-center justify-center gap-4 h-40 max-h-56 hover:bg-gray-300 transition-colors"
             >
               <img
                 src={provider.icon}

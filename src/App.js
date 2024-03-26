@@ -12,6 +12,7 @@ import GetYourCard from "./GetYourCard";
 import LoginForm from "./LoginForm";
 import HistoryTable from "./HistoryTable";
 import ScrollableDialogBox from "./selectCountryDialogBox";
+import ComingSoon from "./ComingSoon";
 
 function App() {
   const [navbarVisible, setNavbarVisible] = useState(true);
@@ -46,6 +47,7 @@ function App() {
               <Route path="/get-your-card" element={<GetYourCard />} />
               <Route path="/login-form" element={<LoginForm />} />
               <Route path="/history-table" element={<HistoryTable />} />
+              <Route path="/coming-soon" element={<ComingSoon />} />
               <Route path="/select-country" element={<ScrollableDialogBox />} />
             </Routes>
         </div>
