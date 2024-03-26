@@ -1,15 +1,23 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import "../src/styles/cs.css"; 
+
 
 const DialogBox = () => {
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const goToCreateYourCard = () => {
     navigate("/select-country");
   };
 
   return (
-    <div className="absolute bg-opacity-50 flex justify-center items-center mx-8 sm:mx-0">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="absolute bg-opacity-50 flex justify-center items-center mx-8 sm:mx-0"
+    >
       <div className="bg-gray-950 bg-opacity-40 text-white rounded-lg max-w-lg mx-auto border-solid border border-gray-600">
         <div className="flex flex-col items-center">
           {/* heading */}
@@ -32,7 +40,7 @@ const DialogBox = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -77,7 +77,7 @@ const OfferCards = () => {
       >
         <div className="flex items-baseline justify-start gap-4">
           <button
-            className="hover:bg-black hover:bg-opacity-50 rounded-full text-white font-bold px-2 py-1 transition-colors"
+            className="dot hover:bg-black hover:bg-opacity-50 rounded-full text-white font-bold px-2 py-1 transition-colors"
             onClick={gotoProviders}
           >
             ←
